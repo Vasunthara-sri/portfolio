@@ -1,48 +1,291 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Portfolio</title>
+    <title>Vasu Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            padding: 20px 0;
+            text-align: center;
+            background: transparent;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .scrolled {
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .scrolled a {
+            color: black !important;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') no-repeat center/cover;
+            color: white;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span {
+            color: #3b82f6;
+        }
+
+        button {
+            background: #3b82f6;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about-container img {
+            width: 320px;
+            border-radius: 12px;
+        }
+
+        .about-container p {
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skills-container span {
+            background: #3b82f6;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+        .projects-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .project-card {
+            width: 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
-<style>
-    body {
-        font-family: Arial;
-        background-color: #f4f4f4;
-        text-align: center;
-    }
 
-    h1 {
-        color: #333;
-    }
-
-    h2 {
-        color: #555;
-    }
-
-    ul {
-        list-style: none;
-    }
-</style>
 <body>
 
-    <h1>Hi, I'm Vasu</h1>
-    <p>Aspiring Django Developer</p>
+<!-- NAVBAR -->
+<nav id="navbar">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <h2>About</h2>
-    <p>I am learning Django and building my skills.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Hi, I'm <span>Vasunthara Sri Subramaniyam</span></h1>
+    <p><strong>Full Stack Web Developer</strong></p>
+    <p>I build dynamic web applications using Django, JavaScript, and modern technologies.</p>
 
+    <button onclick="location.href='#projects'">View Projects</button>
+    <button onclick="window.open('https://github.com/yourusername')">GitHub</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+        <p>
+        I am a passionate Full Stack Web Developer with hands-on experience in building
+        scalable web applications. I specialize in backend development using Python and Django,
+        along with creating responsive frontends using HTML, CSS, and JavaScript.
+
+        I have developed REST APIs using Django REST Framework with full CRUD functionality,
+        handled JSON data, and tested endpoints using Postman.
+
+        I am also familiar with MongoDB, SQLite, Git, and GitHub. Currently, I am focused on
+        building real-world projects to strengthen my full stack development skills.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
     <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>Django</li>
-        <li>HTML</li>
-        <li>CSS</li>
-    </ul>
+    <div class="skills-container">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Responsive Design</span>
+        <span>Python</span>
+        <span>Django</span>
+        <span>Django REST Framework</span>
+        <span>MongoDB</span>
+        <span>SQLite</span>
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>Postman</span>
+    </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
-    <p>Coming soon...</p>
 
+    <div class="projects-container">
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+            <h3>Django API</h3>
+            <p>
+            Developed a REST API using Django REST Framework with CRUD operations,
+            handled JSON data, and tested endpoints using Postman.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+            <h3>Portfolio Website</h3>
+            <p>
+            Designed a responsive portfolio using HTML, CSS, and JavaScript with clean UI and navigation.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f">
+            <h3>Username Checker</h3>
+            <p>
+            Built a Python-based tool to check username availability with backend validation logic.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email: yourmail@gmail.com</p>
+    <p>Email: <a href="mailto:yourmail@gmail.com">vasusiva@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername">github.com/vasunthara-sri</a></p>
+    <p>Location: Chennai, India</p>
+</section>
+
+<!-- NAVBAR SCROLL -->
+<script>
+window.addEventListener("scroll", function () {
+    let nav = document.getElementById("navbar");
+    nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 
 </body>
 </html>
